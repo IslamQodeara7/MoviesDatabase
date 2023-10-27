@@ -1,0 +1,39 @@
+<div>
+    <div class="image px-5">
+        <img [src]="obj.poster_path? imageLink+obj.poster_path:'assets/broken-1.png'" class="img-fluid" alt="">
+    </div>
+    <div class="px-5">
+        <h3 class="text-center my-5"><i class="fa-solid fa-fan mx-2"></i>{{obj.name}}<i class="fa-solid fa-fan mx-2"></i></h3>
+        <p class="text-center my-5">
+            <i class="fa-solid fa-fan mx-2"></i>{{obj.overview}}<i class="fa-solid fa-fan mx-2"></i>
+        </p>
+        <div class="my-5 d-flex justify-content-center align-items-center">
+            <div class="mx-2">Popularity: <span class="value">{{obj.popularity}}</span></div>
+            <div class="mx-2">Vote Average: <span class="value">{{obj.vote_average}}</span></div>
+            <div class="mx-2">Vote Count: <span class="value">{{obj.vote_count}}</span></div>
+        </div>
+        <h4 class="text-center pch">
+            Genres
+        </h4>
+        <div class="row my-5 mx-auto productionCompanies justify-content-center align-items-center">
+            <div *ngFor="let item of obj.genres; let index = index" class="col-6 my-2 text-center">
+                {{index+1}}. {{item.name}}</div>
+        </div>
+        <h4 class="text-center pch">
+            Production Companies
+        </h4>
+        <div class="row my-5 mx-auto productionCompanies justify-content-center align-items-center">
+            <div *ngFor="let item of obj.production_companies; let index = index" class="col-6 my-2 text-center">
+                {{index+1}}. {{item.name}}</div>
+        </div>
+        <h4 class="text-center pch">
+            Production Countries
+        </h4>
+        <div class="row my-5 mx-auto productionCountries justify-content-center align-items-center">
+            <div *ngFor="let item of obj.production_countries; let index = index;" class="col-6 my-2 text-center">
+                {{index+1}}. {{item.name}}</div>
+            
+        </div>
+    </div>
+
+</div>

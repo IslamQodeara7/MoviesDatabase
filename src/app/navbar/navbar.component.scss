@@ -1,0 +1,100 @@
+@import "../colors";
+nav{
+    background-color: $mainColor4;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    z-index: 49;
+    transform: translateX(-50%);
+}
+nav ul li {
+    a {
+        font-size: 16px;
+        transition: all .5s;
+        margin: 0px 10px;
+        color: $mainColor3;
+        font-size: 20px;
+    }
+    
+    a:hover {
+        color: $mainColor2;
+    }
+}
+
+
+
+.redLink {
+    color: $mainColor2 !important;
+}
+
+.websiteBrand {
+    font-size: 30px;
+
+}
+
+@keyframes colorChange {
+    0% {
+        color: $mainColor2;
+       
+    }
+
+    51% {
+        color: $mainColor3;
+        
+    }
+
+    100% {
+        color: $mainColor2;
+        
+    }
+
+
+}
+@keyframes colorChangeReverse {
+    0% {
+        color: $mainColor3;
+       
+    }
+
+    51% {
+        color: $mainColor2;
+        
+    }
+
+    100% {
+        color: $mainColor3;
+        
+    }
+
+
+}
+
+@keyframes colorChange2 {
+    0% {
+        background-color: $mainColor2;
+        left: 0%;
+    }
+
+    51% {
+        background-color: $mainColor3;
+        left: 75%;
+    }
+
+    100% {
+        background-color: $mainColor2;
+        left: 0%;
+    }
+
+
+}
+
+.logoutIndicator{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $mainColor3;
+    color: $mainColor5;
+    z-index: 9999999999;
+    transition: all .5s;
+}

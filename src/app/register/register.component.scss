@@ -1,0 +1,63 @@
+@import "../colors";
+
+
+
+.registerFormIndicator{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #f00;
+    color: #fff;
+    z-index: 9999999999;
+    transition: all .5s;
+}
+
+.firstHalf{
+    animation: colorChange;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+.secondHalf{
+    animation: colorChangeReverse;    
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes colorChange {
+    0% {
+        color: $mainColor2;
+        transform: rotateZ(20deg);
+    }
+
+    51% {
+        color: $mainColor3;
+        transform: rotateZ(-20deg);
+    }
+
+    100% {
+        color: $mainColor2;
+        transform: rotateZ(20deg);
+    }
+
+
+}
+@keyframes colorChangeReverse {
+    0% {
+        color: $mainColor3;
+        transform: rotateZ(20deg);
+    }
+
+    51% {
+        color: $mainColor2;
+        transform: rotateZ(-20deg);
+    }
+
+    100% {
+        color: $mainColor3;
+        transform: rotateZ(20deg);
+    }
+
+
+}
+

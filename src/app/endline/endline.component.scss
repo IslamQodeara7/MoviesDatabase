@@ -1,0 +1,21 @@
+@import "../colors";
+
+i{
+    color: $mainColor3;
+    font-size: 30px;
+}
+
+.endline{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.endline{
+    div{
+        background-color: $mainColor2;
+        height: 10px;
+        width: 45%;
+        border-radius: 0px 50px;
+    }
+}

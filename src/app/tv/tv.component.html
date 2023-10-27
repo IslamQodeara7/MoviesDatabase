@@ -1,0 +1,20 @@
+<div class="tvShows my-5">
+    <h3 class="my-5">Trending TV Shows</h3>
+    <input type="text" class="px-3" [(ngModel)]="tvshowsKeyword" placeholder="search tv shows">
+    <div class="row mx-auto">
+        <div *ngFor="let tvShow of tvShowList|search:tvshowsKeyword" class="col-md-4 align-items-center px-2 my-2">
+       <a [routerLink]="['/tvshow-details',tvShow.id]">
+        <p>{{tvShow.name}}</p>
+        <div data-aos="zoom-out" class="tvShowsItem">
+            <img [src]="tvShow.poster_path? imageLink+tvShow.poster_path:'assets/broken-1.png'" class="img-fluid" alt="">
+        </div>
+       </a>
+        </div>
+    </div>
+</div>
+<app-endline></app-endline>
+<div class="d-flex justify-content-evenly my-5 align-items-center">
+    <button (click)="previousPage()" class="btn">Previous Page <i class="fa-solid fa-arrow-left mx-2"></i></button>
+    <div class="text-center">page: {{pageNumber}}</div>
+    <button (click)="nextPage()" class="btn">Next Page <i class="fa-solid fa-arrow-right mx-2"></i></button>
+</div>

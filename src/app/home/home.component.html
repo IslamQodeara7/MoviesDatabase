@@ -1,0 +1,45 @@
+<div class="movies my-5">
+    <h3 class="my-5">Trending Movies</h3>
+
+    <input type="text" class="px-3" [(ngModel)]="moviesKeyword" placeholder="search movies">
+    <div class="row mx-auto">
+        <div *ngFor="let movie of movies|search:moviesKeyword" class="col-md-4 align-items-center px-2 my-2">
+           <a [routerLink]="['/movie-details',movie.id]">
+            <p>{{movie.title}}</p>
+            <div data-aos="zoom-out" class="moviesItem">
+                <img [src]="movie.poster_path? imageLink+movie.poster_path:'assets/broken-1.png'" class="img-fluid" alt="">
+            </div>
+           </a>
+        </div>
+    </div>
+</div>
+<app-endline></app-endline>
+<div class="tvShows my-5">
+    <h3 class="my-5">Trending TV Shows</h3>
+    <input type="text" class="px-3" [(ngModel)]="tvshowsKeyword" placeholder="search tv shows">
+    <div class="row mx-auto">
+        <div *ngFor="let tvShow of tvShows|search:tvshowsKeyword" class="col-md-4 align-items-center px-2 my-2">
+       <a [routerLink]="['/tvshow-details',tvShow.id]">
+        <p>{{tvShow.name}}</p>
+        <div data-aos="zoom-out" class="tvShowsItem">
+            <img [src]="tvShow.poster_path? imageLink+tvShow.poster_path:'assets/broken-1.png'" class="img-fluid" alt="">
+        </div>
+       </a>
+        </div>
+    </div>
+</div>
+<app-endline></app-endline>
+<div class="persons my-5">
+    <h3 class="my-5">Trending Actors</h3>
+    <input type="text" class="px-3" [(ngModel)]="personsKeyword" placeholder="search persons">
+    <div class="row mx-auto">
+        <div *ngFor="let person of people|search:personsKeyword" class="col-md-4 align-items-center px-2 my-2">
+          <a  [routerLink]="['/person-details',person.id]">
+            <p>{{person.name}}</p>
+            <div data-aos="zoom-out" class="personsItem">
+                <img [src]="person.profile_path? imageLink+person.profile_path:'assets/broken-1.png'" class="img-fluid" alt="">
+            </div>
+          </a>
+        </div>
+    </div>
+</div>

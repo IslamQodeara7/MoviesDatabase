@@ -1,0 +1,16 @@
+@import "../../colors";
+
+.personalInfo{
+    .data{
+        border: 2px solid $mainColor3;
+        padding: 30px;
+        border-radius: 30px;
+        width: fit-content;
+        transition: all .5s;
+        cursor: pointer;
+        &:hover{
+            border-color: $mainColor2;
+            border-width: 10px;
+        }
+    }
+}

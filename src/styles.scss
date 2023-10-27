@@ -1,0 +1,133 @@
+/* You can add global styles to this file, and also import other style files */
+@import "app/colors";
+
+@font-face {
+    font-family: 'expo';
+    src: url('assets/Expo\ Regular.ttf');
+}
+
+* {
+    font-family: 'expo';
+}
+
+body {
+    background-color: $mainColor5;
+}
+
+
+.firstHalf {
+    animation: colorChange;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+.secondHalf {
+    animation: colorChangeReverse;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes colorChange {
+    0% {
+        color: $mainColor5;
+        transform: rotateZ(20deg);
+    }
+
+    51% {
+        color: $mainColor3;
+        transform: rotateZ(-20deg);
+    }
+
+    100% {
+        color: $mainColor5;
+        transform: rotateZ(20deg);
+    }
+
+
+}
+
+@keyframes colorChangeReverse {
+    0% {
+        color: $mainColor3;
+        transform: rotateZ(20deg);
+    }
+
+    51% {
+        color: $mainColor5;
+        transform: rotateZ(-20deg);
+    }
+
+    100% {
+        color: $mainColor3;
+        transform: rotateZ(20deg);
+    }
+
+
+}
+
+.loginDiv {
+    border: 2px solid $mainColor5;
+    border-radius: 50px;
+}
+
+.button1 {
+    border: 2px solid $mainColor3;
+    color: $mainColor3;
+    transition: all .5s;
+}
+
+.button1:hover {
+    color: $mainColor5;
+    background-color: $mainColor3;
+}
+
+.value {
+    color: $mainColor3;
+}
+
+.image {
+    border: 10px solid $mainColor3;
+    border-radius: 0px 50px;
+    overflow: hidden;
+    width: 350px;
+    height: 350px;
+    margin: auto;
+}
+
+input {
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 50px 0px !important;
+    border: 2px solid $mainColor2 !important;
+    color: $mainColor3 !important;
+    background-color: transparent !important;
+
+    &::placeholder {
+        color: $mainColor2 !important;
+    }
+
+}
+
+form {
+    border: 2px solid $mainColor2;
+    border-radius: 50px 0px;
+    box-shadow: 5px 10px 15px $mainColor2;
+}
+
+
+.pch{
+    width: fit-content;
+    padding: 20px 30px;
+    border-radius: 0px 50px;
+    border: 2px solid $mainColor2;
+    margin: auto;
+}
+
+.productionCompanies,.productionCountries{
+    div{
+        border: 2px solid $mainColor3;
+        border-radius: 0px 50px;
+        padding: 10px 15px;
+        color: $mainColor3;
+    }
+}

@@ -1,0 +1,76 @@
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand text-center websiteBrand"><span class="firstHalf">No</span><span class="secondHalf">xe</span>
+        <div style="cursor: pointer; font-size: 15px;" *ngIf="isLogin" class="mx-auto text-center">
+          <a class="nav-link text-center"> <span class="firstHalf"><i class="fa-solid fa-fan"></i>
+            <i class="fa-solid fa-ghost mx-2"></i>
+            {{user.first_name}}
+          </span>
+          <span class="secondHalf">{{user.last_name}} <i class="fa-solid fa-fan"></i></span></a>
+        </div>     
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="redLink" *ngIf="isLogin" routerLink="home">home</a>
+          </li>
+   
+       
+       
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="redLink" *ngIf="isLogin" routerLink="movies">movies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="redLink" *ngIf="isLogin" routerLink="tv">tv</a>
+          </li>
+         
+          <li *ngIf="isLogin" class="nav-item dropdown">
+            <a routerLinkActive="redLink" routerLink="settings" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Settings
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="settings/profile">Profile</a></li>
+              <li><a class="dropdown-item" routerLink="settings/privacy">Privacy</a></li>
+           
+            </ul>
+          </li>
+         
+          
+        </ul>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+     <li class="nav-item">
+     
+     </li>     
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="!isLogin" routerLink="login" routerLinkActive="redLink">login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="!isLogin" routerLink="register" routerLinkActive="redLink">register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="cursor: pointer;" *ngIf="isLogin" (click)="callLogout()">logout</a>
+          </li>
+ 
+       
+         
+          
+        </ul>
+        
+      </div>
+    </div>
+    <div class="userIndicator">
+      
+    </div>
+  </nav>
+  <div [style.backgroundColor]="indicatorColor" style="font-size: 20px;" [ngStyle]="{'opacity':indicatorShow?'1':'0'}"
+  class="logoutIndicator p-5">
+  <div class="registerFormIndicatorClose mb-2 d-flex justify-content-end">
+      <i style="cursor: pointer;" (click)="indicatorShow=false; indicatorColor='#f00'" class="fa-solid fa-xmark"></i>
+  </div>
+  {{indicatorMessage}}
+  <i [ngClass]="smileOrSad?'mx-1 fa-solid fa-face-smile':'mx-1 fa-solid fa-face-frown-open'"></i>
+</div>
